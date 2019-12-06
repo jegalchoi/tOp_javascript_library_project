@@ -5,15 +5,34 @@ function Book(title, author, pages, status) {
   this.author = author
   this.pages = pages
   this.status = status
-  this.info = function () {
-    return `${this.title}, ${this.author}, ${this.pages}, ${this.status}`;
-  }
 }
 
-function addBookToLibrary(title, author, pages, status) {
+function addBook(title, author, pages, status) {
   let book = new Book(title, author, pages, status);
   myLibrary.push(book);
 }
 
-addBookToLibrary('ender game', 'jay', '300 pages', 'not yet read');
+addBook('ender game', 'jay', '300', 'unread');
+console.log(myLibrary);
+
+let handlers = {
+  addBook: function() {
+    let titleInput = document.getElementById('titleInput');
+    let authorInput = document.getElementById('authorInput');
+    let pagesInput = document.getElementById('pagesInput');
+    let statusInput = document.getElementById('statusInput').value;
+    let status = (true) ? "read" : "unread";
+
+    addBook(titleInput.value, authorInput.value, pagesInput.value, status);
+
+    titleInput.value = '';
+    authorInput.value = '';
+    pagesInput.value = '';
+    statusInput.value = '';
+  },
+
+
+};
+
+
 console.log(myLibrary);

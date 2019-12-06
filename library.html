@@ -12,19 +12,41 @@
     <h2>New Book</h2>
 
     <div>
-      <button>Title: </button>
+      <label>
+        Title: 
+        <input type="text" id="titleInput">
+      </label>
     </div>
     <br>
 
     <div>
-        <button>Author: </button>
+      <label>
+        Author: 
+        <input type="text" id="authorInput">
+      </label>
     </div>
     <br>
 
     <div>
-      <button>Pages: </button>
+      <label>
+        Pages: 
+        <input type="number" id="pagesInput">
+      </label>
     </div>
     <br>
+
+    <div>
+      <label>
+        Read: 
+        <input type="boolean" id="statusInput" value=false>
+      </label>
+    </div>
+    <br>
+
+    <div>
+      <button onclick='handlers.addBook()'>Add Book to Library</button>
+
+    </div>
 
     <script src="library.js"></script>
 </body>
